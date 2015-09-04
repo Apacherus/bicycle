@@ -93,9 +93,9 @@
              * определяем язык 2
              **/
 
-            var lang = app.dom7('html').attr('lang') || app.meta.language[app.meta.languageDefault];
+            var lang = document.getElementsByTagName('html')[0].getAttribute('lang') || app.meta.language[app.meta.languageDefault];
             app.meta.languageCurrent = app.indexOfVal(app.meta.language, lang);
-            app.dom7('body').addClass('lang-' + app.meta.language[app.meta.languageCurrent]);
+            document.getElementsByTagName('body')[0].classList.add('lang-' + app.meta.language[app.meta.languageCurrent]);
 
             String.prototype.translate = function(translateTo){
                 var lang;
