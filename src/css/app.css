@@ -1,0 +1,422 @@
+/**
+ * Disable selection
+ **/
+body {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/**
+ * Livereload overlay
+ **/
+#__bs_notify__{
+    padding: 0 !important;
+    opacity:0.5 !important;
+    font-size:10px !important;
+    left:30% !important;
+    right:inherit !important;
+}
+
+.statusbar-overlay {
+    background:#586875;
+    background-image: linear-gradient(#586875, #576774);
+}
+
+.navbar {
+    background:linear-gradient(#586774, #516A7C);
+    color: white;
+    font-family: Avenir;
+
+}
+
+.navbar:after {
+    background:none;
+}
+
+.smart-select-page .navbar {
+    display: none;
+}
+
+.smart-select-page ul {
+    background: none;
+}
+
+label.label-radio input[type=radio]:checked~.item-inner {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2013%2010'%3E%3Cpolygon%20fill%3D'%23FFFFFF'%20points%3D'11.6%2C0%204.4%2C7.2%201.4%2C4.2%200%2C5.6%204.4%2C10%204.4%2C10%204.4%2C10%2013%2C1.4%20'%2F%3E%3C%2Fsvg%3E");
+}
+
+.page-content {
+    margin-top: 44px;
+}
+
+.page, body, .page-content {
+    background-color: #ededed;
+    background-image: linear-gradient(#516A7C, #2A3239);
+    color:white;
+}
+
+img.preloader{
+    position: absolute;
+    top:-100px;
+    left:-100px;
+    width:1px;
+    height: 1px;
+}
+
+
+.loading-overlay {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background:url("../img/app/three-dots.svg") no-repeat center, linear-gradient(#252525, #191919);
+    z-index: 999999;
+    opacity: 1.0;
+    transition-property: opacity, top;
+    transition-duration: 0.7s;
+}
+
+.calibration {
+    width:100%;
+    height: 60px;
+    background:url("../img/app/three-dots.svg") center no-repeat;
+}
+
+/**
+ * Fonts definition
+ **/
+@font-face {
+    font-family: "Avenir";
+    src:url("../img/fonts/Avenir.ttc");
+}
+
+@font-face {
+    font-family: "DS-DIGI";
+    src:url("../img/fonts/DS-DIGI.TTF");
+}
+
+/**
+ * Icons definition
+ **/
+.icon {
+    width:25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-results {
+    background-image: url("../img/icon-results-off.svg");
+    width:20px;
+    height: 21px;
+}
+
+
+.active-state > .icon-results{
+    background-image: url("../img/icon-results-on.svg");
+}
+
+.icon-settings {
+    background-image: url("../img/icon-settings-off.svg");
+    width:25px;
+    height: 25px;
+}
+
+.active-state > .icon-settings{
+    background-image: url("../img/icon-settings-on.svg");
+}
+
+.icon-back {
+    width:25px !important;
+    height: 25px !important;
+}
+
+.icon-back, .icon-back-custom {
+    background-image: url("../img/icon-back.svg") !important;
+    background-size: contain !important;
+}
+
+.icon-delete {
+    background-image: url("../img/icon-delete-nobg.svg");
+}
+
+.page-index-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-title{
+    font-family: Avenir;
+    color:white;
+    font-size:25px;
+    text-align: center;
+}
+
+.logo-start-screen {
+    height: 200px;
+    width:100%;
+    background-image: url("../img/logo-start-screen.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.text-push-to-start {
+    font-family: Avenir;
+    text-align: center;
+    color:#000;
+    font-size: 17px;
+}
+
+.button-start {
+    width:100px;
+    height: 100px;
+    background-image: url("../img/button-start-off.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-start.active-state {
+    background-image: url("../img/button-start-on.svg");
+}
+
+.button-stop {
+    width:100px;
+    height: 100px;
+    background: url("../img/button-stop-off.svg") no-repeat center;
+    background-size: 100%;
+    margin:0 auto;
+    display: block;
+}
+
+.button-stop.active-state {
+    width:100px;
+    height: 100px;
+    background-image: url("../img/button-stop-on.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-speedometer-wrapper {
+
+}
+
+.speedometer {
+    width:300px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background: url("../img/speedometer-bg.svg") no-repeat center;
+    background-size: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.speedometer-arrow {
+    width:50px;
+    height: 150px;
+    transform-origin: center 122px;
+    transform: rotate(-101deg);
+    margin-top:30px;
+    transition: transform 0.5s;
+    background-image: url("../img/speedometer-arrow.png");
+    background-position: center;
+
+    background-size:cover;
+}
+
+.speedometer-digital {
+    width:66px;
+    height: 35px;
+    background-image: linear-gradient(-180deg, #4E5F69 0%, #859CAD 100%);
+    box-shadow: 0px 1px 1px 0px rgba(249,249,249,0.68), inset 0px 1px 1px 0px #404C54;
+    border-radius: 7px;
+    position: absolute;
+    bottom: 32px;
+    left:117px;
+    color:white;
+    font-family: DS-DIGI;
+    font-size: 32px;
+    text-shadow: 1px 1px 2px #3a3a3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    display: none;
+    text-align: center;
+}
+
+.result-distance {
+    font-size: 30px;
+}
+
+.result-speed {
+    font-size:20px;
+}
+
+.distance-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.distance-wrapper .distance {
+    min-width:73px;
+    height: 36px;
+    background-color: #E7E7E7;
+    border-radius: 6px;
+    box-shadow: 0px 1px 1px #9BADBC, inset 0px 1px 1px #2C363D;
+    color:#2D363C;
+    font-family: DS-DIGI;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5px;
+}
+
+.distance-wrapper .distance-subtext {
+    margin-top:5px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.angle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.angle-beta,
+.angle-gamma {
+    width:120px;
+    height:120px;
+    background: url("../img/angle-bg.svg") no-repeat center;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.angle-beta-inner,
+.angle-gamma-inner {
+    width:88px;
+    height: 88px;
+    content: '';
+    display: block;
+    background: url("../img/angle-beta.png") no-repeat center;
+    background-size: 100%;
+    transition: transform 1s;
+    transform: rotate(0deg);
+}
+
+.angle-gamma-inner {
+    background: url("../img/angle-gamma.png") no-repeat center;
+    background-size: 100%;
+    margin-top: 18px;
+    transform-origin: center 34px;
+}
+
+.button-calibrate {
+    width:50px;
+    height:50px;
+    background: url("../img/button-calibrate-off.png");
+    background-size: 100%;
+    border-radius: 50%;
+}
+
+.button-calibrate.active-state {
+    background-image: url("../img/button-calibrate-on.png");
+}
+
+.results .row.head {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.results .swipeout-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 0;
+}
+
+
+.results .swipeout:nth-child(even){
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.results .row .col {
+    padding: 10px 0;
+    text-align: center;
+    flex:0 0 100px;
+}
+
+.results-units {
+    color: rgba(255, 255, 255, 0.31);
+}
+
+.results .empty {
+    display: none;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    width:100%;
+    padding-top: 20px;
+}
+
+/**
+ * TODO: высоты для разных устройств
+ **/
+
+.results .data {
+    max-height: 464px;
+    overflow: scroll;
+    margin:0;
+    padding: 0;
+    font-size: 15px;
+}
+
+.results .list-block .swipeout {
+    overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.results .swipeout-actions-right a {
+    background: #DD0037 url("../img/icon-delete.svg") no-repeat center;
+}
+
+.settings ul {
+    background-color: transparent;
+}
+
+.settings .arrow-right {
+    width:30px;
+    height: 30px;
+    background-image: url("../img/arrow-right.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    margin-top:-3px;
+}

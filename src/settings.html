@@ -1,0 +1,54 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="back">
+                <i class="icon icon-back-custom"></i>
+            </a>
+        </div>
+        <div class="center sliding">{{title}}</div>
+    </div>
+</div>
+<div class="pages">
+    <div class="page" data-page="settings">
+        <div class="page-content settings">
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <a href="#" class="item-link smart-select units" data-page-title="{{measureUnits}}" data-back-text=" " data-back-on-select="true">
+                            <select class="settings-units">
+                                <option value="KM">{{KM}}</option>
+                                <option value="M">{{M}}</option>
+                            </select>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">{{measureUnits}}</div>
+                                    <div class="item-after smart-select-value">{{KM}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">{{useGPS}}</div>
+                            <div class="item-after">
+                                <label class="label-switch">
+                                    <input type="checkbox">
+                                    <div class="checkbox"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content settings-calibration">
+                        <div class="item-inner">
+                            <div class="item-title">{{calibration}}</div>
+                            <div class="item-after">
+                                <div class="arrow-right"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 //export PATH="$PATH:$HOME/.npm-packages/bin"
-//npm install gulp gulp-watch gulp-autoprefixer gulp-uglify gulp-sass gulp-sourcemaps gulp-rigger gulp-minify-css gulp-imagemin imagemin-pngquant browser-sync browserify gulp-react del gulp-replace gulp-zip --save-dev
+//npm install gulp gulp-watch gulp-plumber gulp-autoprefixer run-sequence gulp-uglify gulp-sass gulp-sourcemaps gulp-rigger gulp-minify-css gulp-imagemin imagemin-pngquant browser-sync browserify gulp-react del gulp-replace gulp-zip --save-dev
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
@@ -19,7 +19,8 @@ var gulp = require('gulp'),
     react = require('gulp-react'),
     del = require('del'),
     replace = require('gulp-replace'),
-    zip = require('gulp-zip');
+    zip = require('gulp-zip'),
+    plumber = require('gulp-plumber');
 
 var runSequence = require('run-sequence');
 
@@ -78,11 +79,12 @@ gulp.task('webserver', function () {
 });
 
 gulp.task('clean', function (cb) {
-    del(path.clean, cb);
+    return del(path.clean, cb);
 });
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
+        .pipe(plumber())
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
@@ -100,6 +102,7 @@ gulp.task('data:build', data);
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
+        .pipe(plumber())
         .pipe(rigger())
         //.pipe(browserify())
         //.pipe(reactify)
@@ -132,6 +135,7 @@ gulp.task('sass:build', function(){
             sourceMap:true,
             errLogToConsole: true
         }))
+        .pipe(plumber())
         .pipe(gulp.dest(path.dist.tmp.css))
         .pipe(reload({stream:true}));
 });
@@ -150,6 +154,7 @@ gulp.task('sass:build-prod', function(){
 
 gulp.task("style-after-sass:build", function() {
     return gulp.src(path.dist.tmp.css)
+        .pipe(plumber())
         .pipe(prefixer({
             browsers: ['last 15 versions'],
             cascade: false
@@ -177,6 +182,7 @@ gulp.task("style-after-sass:build-prod", function() {
 
 gulp.task("style:build", function() {
     return gulp.src(path.src.style)
+        .pipe(plumber())
         .pipe(prefixer({
             browsers: ['last 15 versions'],
             cascade: false
@@ -208,6 +214,7 @@ gulp.task('dist:copy', function(){
 
 gulp.task('images:build', function () {
     return gulp.src(path.src.img)
+        .pipe(plumber())
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
